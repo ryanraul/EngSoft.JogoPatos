@@ -4,7 +4,7 @@
     {
         public PatoBorracha()
         {
-            SetComportamento(new NaoVoa());
+            SetComportamentoVoo(new NaoVoa());
         }
 
         public override string Mostrar()

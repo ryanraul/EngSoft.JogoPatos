@@ -6,7 +6,8 @@ namespace EngSoft.JogoPatos.Models
     {
         public PatoRuivo()
         {
-            SetComportamento(new VoaveisAsa());
+            SetComportamentoVoo(new VoaveisAsa());
+            SetComportamentoCorrida(new Corredor());
         }
 
         public string Grasnar()

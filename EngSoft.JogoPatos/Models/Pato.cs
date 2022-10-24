@@ -4,7 +4,9 @@ namespace EngSoft.JogoPatos.Models
 {
     public abstract class Pato
     {
-        protected PadraoVoaveis ComportamentoPato;
+        protected PadraoVoaveis ComportamentoVooPato;
+
+        protected PadraoCorrer ComportamentoCorridaPato;
         public abstract string Mostrar();
 
         public string Nadar()
@@ -12,14 +14,30 @@ namespace EngSoft.JogoPatos.Models
             return "Pato Nadando.";
         }
 
-        public void SetComportamento(PadraoVoaveis padrao)
+        public void SetComportamentoVoo(PadraoVoaveis padrao)
         {
-            ComportamentoPato = padrao;
+            ComportamentoVooPato = padrao;
         }
 
-        public string GetComportamentoPato()
+        public string GetComportamentoVooPato()
         {
-            return ComportamentoPato.Voar();
+            return ComportamentoVooPato.Voar();
+        }
+
+        public void SetComportamentoCorrida(PadraoCorrer padrao)
+        {
+            ComportamentoCorridaPato = padrao;
+        }
+
+        public string GetComportamentoCorridaPato()
+        {
+            return ComportamentoCorridaPato.Correr();
+        }
+
+        public void SetDistanciaComportamentoCorrerPato(int distancia)
+        {
+            if(ComportamentoCorridaPato != null)
+                ComportamentoCorridaPato.SetDistancia(distancia);
         }
 
     }

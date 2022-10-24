@@ -1,13 +1,21 @@
 ﻿using EngSoft.JogoPatos.Models;
 
-Console.WriteLine("Hello, World!");
-
 Pato pt = new PatoRuivo();
-
 Console.WriteLine(pt.Mostrar());
 Console.WriteLine(pt.Nadar());
-Console.WriteLine(pt.GetComportamentoPato());
+Console.WriteLine(pt.GetComportamentoVooPato());
+pt.SetComportamentoVoo(new VoarFoguete());
+Console.WriteLine(pt.GetComportamentoVooPato());
 
-pt.SetComportamento(new VoarFoguete());
+// Implementação do pato corredor e maratonista
 
-Console.WriteLine(pt.GetComportamentoPato());
+Pato patoCorrida = new PatoCorrida();
+Console.WriteLine(patoCorrida.Mostrar());
+Console.WriteLine(patoCorrida.GetComportamentoCorridaPato());
+
+patoCorrida.SetComportamentoCorrida(new Maratonista());
+Console.WriteLine(patoCorrida.GetComportamentoCorridaPato());
+
+patoCorrida.SetDistanciaComportamentoCorrerPato(300);
+Console.WriteLine(patoCorrida.GetComportamentoCorridaPato());
+
